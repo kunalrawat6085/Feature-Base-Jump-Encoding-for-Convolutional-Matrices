@@ -48,3 +48,14 @@ print(encoded)
 jumps, original = base_jump_decode(encoded, base)
 print(jumps)     # [[1 0 0], [0 1 0]]
 print(original)  # [[2 3 6], [1 4 5]]
+
+...
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+---
+
+**Original idea by Ante Marić**  
+If you use, fork, or modify, attribution appreciated!
