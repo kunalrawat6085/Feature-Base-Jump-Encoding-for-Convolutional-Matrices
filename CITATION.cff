@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: >
+  If you use this software, please cite it as below.
+title: Recursive Base-Positional Encoding for Hierarchical Matrix Features
+authors:
+  - family-names: Marić
+    given-names: Ante
+    orcid: https://orcid.org/0009-0002-4967-7840
+date-released: 2024-09-29
+abstract: >
+  Memory-efficient technique for encoding hierarchical, recursive, or multi-scale feature information in a single integer per matrix cell, using base-positional arithmetic. Each "digit" encodes the state at a given recursion depth. Enables efficient, compact representation of sparse or multi-level features in grid- or tree-like data.
+repository-code: https://github.com/AnteMaric01/Feature-Base-Jump-Encoding-for-Convolutional-Matrices
+license: MIT
+keywords:
+  - encoding
+  - positional
+  - recursion
+  - matrix
+  - computer vision
+  - compression
