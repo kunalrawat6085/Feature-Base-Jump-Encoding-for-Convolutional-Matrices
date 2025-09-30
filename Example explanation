@@ -1,0 +1,48 @@
+# Recursive Base-Positional Encoding for Hierarchical Matrix Features
+
+**Author:** Ante Marić
+
+This repository demonstrates a memory-efficient method for storing hierarchical or recursive feature information within a single integer per matrix cell.
+
+## What Is This?
+
+- Imagine you have a 2D grid, and at each cell, you may want to record information not just at one "level" (e.g., region present/not), but recursively at several depths (e.g., splits within splits, as in quadtrees, grids, or multi-scale shape analysis).
+- Instead of adding more matrices, channels, or memory, **this method encodes every level of refinement in the digits of a single integer** using a chosen `base`.
+- It’s a "positional roadmap"—each digit tells you the state at a given recursion depth.
+
+---
+
+## How It Works
+
+- Each refinement step (e.g., split in a region) increments the value by `base^level`.
+- At each recursion level, **max value per level must be < base** to avoid ambiguity.
+- To decode, simply extract digits by dividing and taking modulo with increasing powers of `base`.
+
+**Example:**
+- `base = 10`
+- Suppose, at one location, recursion reveals `[2, 1, 1, 1]` (original value 2, then refinement: 1 at each deeper level)
+- Encoding: `encoded = 2 + 1*10 + 1*100 + 1*1000 = 1112`
+- Decoding: Level 3 = 1, Level 2 = 1, Level 1 = 1, Level 0 = 2
+
+---
+
+## Usage Example
+
+```python
+from base_positional_encode import encode_hierarchical, decode_hierarchical
+
+# 4-level encoding (e.g., shape/refinement tree)
+feature_path = [2, 1, 1, 1]
+base = 10
+
+# Encode all levels into one integer
+encoded = encode_hierarchical(feature_path, base)
+print(encoded)  # 1112
+
+# Decode back into per-level states
+decoded = decode_hierarchical(encoded, depth=4, base=base)
+print(decoded)  # [2, 1, 1, 1]
+
+# To update a particular level (e.g., increment level 2 by 1):
+encoded += 1 * (base ** 2)
+print(decode_hierarchical(encoded, 4, base))  # [2, 1, 2, 1]
