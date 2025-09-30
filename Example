@@ -1,0 +1,74 @@
+"""
+Recursive Base-Positional Encoding for Hierarchical Matrix Features
+------------------------------------------------------------------
+Author: Ante Marić
+Date: 2024-09-29
+
+Summary:(dive at insanity risk )
+    Encodes hierarchical, recursive, or grid-based features in a single integer
+    value per cell using positional base arithmetic. Each "digit" encodes the 
+    state/value at a specific recursion depth (or spatial split).
+
+    This allows you to:
+    - Store multi-level, recursive, or sparse splits in a compact way.
+    - Easily decode all refinement levels by digit extraction (no extra memory/channels).
+
+    Example:
+        - Base = 10, max value at any level = 9 (i.e., values per digit: 0..9)
+        - Value 1112 encodes: Level3=1, Level2=1, Level1=1, Level0=2
+        - Updating "level 2" (hundreds digit): just add/subtract multiples of 100
+"""
+
+def encode_hierarchical(values, base):
+    """
+    Encode a list of per-level values into a single integer, using base-positional encoding.
+
+    Args:
+        values (list of int): List of values [L_n, L_n-1, ..., L_0], each for a recursion level.
+                              L_0 = coarsest (root/original), L_n = deepest/refined.
+        base (int): Base for each position; must be > max value at any level.
+
+    Returns:
+        int: Encoded value.
+    """
+    total = 0
+    for level, v in enumerate(values):
+        assert 0 <= v < base, "Value at each level must be less than base."
+        total += v * (base ** level)
+    return total
+
+def decode_hierarchical(number, depth, base):
+    """
+    Decode an encoded integer into its per-level values.
+
+    Args:
+        number (int): Encoded value.
+        depth (int): Number of recursion levels (how many digits to extract).
+        base (int): Base used in encoding.
+
+    Returns:
+        list of int: Values per level, [L_0, L_1, ..., L_n]
+    """
+    values = []
+    for level in range(depth):
+        value = (number // (base ** level)) % base
+        values.append(value)
+    return values
+
+if __name__ == "__main__":
+    # Example: 4-level split, e.g., region refinement in a 2D grid
+    # Level 0 = coarse (original), Level 3 = deepest
+    base = 10
+    feature_path = [2, 1, 1, 1]  # [L0, L1, L2, L3] (original, then three refinements)
+    # Encode:
+    encoded = encode_hierarchical(feature_path, base)
+    print(f"Encoded value: {encoded}")  # 1112
+
+    # Decode:
+    decoded = decode_hierarchical(encoded, depth=4, base=base)
+    print(f"Decoded (per level): {decoded}")  # [2, 1, 1, 1]
+
+    # Example: update value at level 2 (hundreds digit)
+    new_value = encoded + (1 * (base ** 2))  # increment level 2 by 1
+    print(f"Value after updating level 2: {new_value}")  # 1212
+    print(f"Decoded after update: {decode_hierarchical(new_value, 4, base)}")  # [2, 1, 2, 1]
